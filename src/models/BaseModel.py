@@ -10,18 +10,18 @@ class BaseModel:
         Args:
             filename (str): Nom du fichier
         """
-
+        ET.register_namespace("","http://www.w3.org/2000/svg")
         self.filename = filename
         self.tree = None
 
-    def parse(self, encoding: str = 'ISO-8859-5') -> None:
+    def parse(self, encode: str = 'ISO-8859-5') -> None:
         """Parse le fichier, il se peut qu'il l'analyse de fichier echoue, dans ce cas on le parse avec XMLParser
 
         Args:
             encoding (str, optional): type d'encodage. Defaults to 'utf8'.
         """
 
-        self.tree = ET.parse(self.filename)
+        self.tree = ET.parse(self.filename,  parser=ET.XMLParser(encoding=encode))
 
     def root(self) -> ET.Element:
         """Retourne le noeud root
