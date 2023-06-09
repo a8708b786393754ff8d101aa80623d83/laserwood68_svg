@@ -10,7 +10,8 @@ class BaseModel:
         Args:
             filename (str): Nom du fichier
         """
-        ET.register_namespace("","http://www.w3.org/2000/svg")
+        
+        # ET.register_namespace("","http://www.w3.org/2000/svg")
         self.filename = filename
         self.tree = None
 
@@ -22,6 +23,18 @@ class BaseModel:
         """
 
         self.tree = ET.parse(self.filename,  parser=ET.XMLParser(encoding=encode))
+
+    def split_namespace(self, tag: str): 
+        """Retourne le tag sans le namspace
+
+        Args:
+            tag (str): balise xml
+
+        Returns:
+            str: tag
+        """
+        
+        return tag.split('}')[1]
 
     def root(self) -> ET.Element:
         """Retourne le noeud root

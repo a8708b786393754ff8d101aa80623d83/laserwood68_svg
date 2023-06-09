@@ -12,4 +12,5 @@ class PersonneModel(BaseModel):
         Returns:
             _type_: _description_
         """
+        
         return self.root().find(f'.*[@id="g{self.id}"]')
