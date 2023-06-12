@@ -1,7 +1,7 @@
 import tkinter as ttk
 
 
-class MainView(ttk.Frame):
+class MainFrame(ttk.Frame):
     def __init__(self, root: ttk.Tk):
         super().__init__()
         self.numbers_ = ttk.StringVar()
