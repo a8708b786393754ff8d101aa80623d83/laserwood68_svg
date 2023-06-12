@@ -1,8 +1,14 @@
 #! /usr/bin/python3
-from src.models.PersonneModel import PersonneModel
-from src.models.CadreModel import CadreModel
+from src.views.AppView import AppView
+from src.views.MainFrame import MainFrame
 
-personn = PersonneModel('svg/famille.svg')
-personn.parse()
-root = personn.root()
-print(root.attrib)
+app = AppView()
+main_frame = MainFrame(app)
+
+main_frame.number()
+main_frame.title()
+main_frame.validate()
+main_frame.preview()
+
+
+app.mainloop()
