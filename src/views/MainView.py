@@ -23,5 +23,5 @@ class MainView(ttk.Frame):
         self.button_validate = ttk.Button(self.root, text='Validée').grid()
         
         
-    def pre_vizuialisation(self): 
-        self.button_pre_visual = ttk.Button(self.root, texte="Pre-Visualiser").grid()
+    def preview(self): 
+        self.button_preview = ttk.Button(self.root, texte="Prévisualisée").grid()
