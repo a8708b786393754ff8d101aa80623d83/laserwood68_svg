@@ -16,7 +16,7 @@ class MainView(ttk.Frame):
             self.root, textvariable=self.number_).grid(row=0, column=1)
 
     def title(self):
-        self.label_title = ttk.Label(self.root, text='Titre').grid(row=1)
+        self.label_title = ttk.Label(self.root, text='Titre', width=20).grid(row=1)
         self.entry_title = ttk.Entry(self.root, textvariable=self.title_).grid(row=1, column=1)
 
     def validate(self):
