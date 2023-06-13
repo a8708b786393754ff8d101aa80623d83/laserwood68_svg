@@ -1,5 +1,6 @@
 from .BaseModel import BaseModel
-import xml.etree.ElementTree as ET 
+import xml.etree.ElementTree as ET
+
 
 class ElementModel(BaseModel):
     def __init__(self) -> None:
@@ -12,7 +13,7 @@ class ElementModel(BaseModel):
         Args:
             id (int | str): id de la balise html
         """
-        
+
         self.id = id
 
     def get_node_g(self) -> ET.Element:
@@ -21,5 +22,5 @@ class ElementModel(BaseModel):
         Returns:
             ET.Element: resultat de la recherche sur les noeud qui contiennt des id g
         """
-        
+
         return self.root().find(f'.*[@id="g{self.id}"]')
