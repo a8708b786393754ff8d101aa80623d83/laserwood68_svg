@@ -1,5 +1,5 @@
 from .BaseModel import BaseModel
-
+import xml.etree.ElementTree as ET 
 
 class ElementModel(BaseModel):
     def __init__(self) -> None:
@@ -15,10 +15,11 @@ class ElementModel(BaseModel):
         
         self.id = id
 
-    def get_node_g(self):
+    def get_node_g(self) -> ET.Element:
         """Renvoie le neoud xml du personnage
 
         Returns:
-            _type_: _description_
+            ET.Element: resultat de la recherche sur les noeud qui contiennt des id g
         """
+        
         return self.root().find(f'.*[@id="g{self.id}"]')
