@@ -1,4 +1,5 @@
 import tkinter as ttk
+from tkinter import messagebox
 
 
 class MainFrame(ttk.Frame):
@@ -28,3 +29,6 @@ class MainFrame(ttk.Frame):
     def preview(self):
         self.button_preview = ttk.Button(
             self.root, text="Prévisualisée").grid()
+
+    def error(self, title: str, message: str):
+        messagebox.showerror(title, message)
