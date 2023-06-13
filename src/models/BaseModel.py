@@ -10,7 +10,7 @@ class BaseModel:
         Args:
             filename (str): Nom du fichier
         """
-        
+
         # ET.register_namespace("","http://www.w3.org/2000/svg")
         self.filename = filename
         self.tree = None
@@ -22,9 +22,10 @@ class BaseModel:
             encoding (str, optional): type d'encodage. Defaults to 'utf8'.
         """
 
-        self.tree = ET.parse(self.filename,  parser=ET.XMLParser(encoding=encode))
+        self.tree = ET.parse(
+            self.filename,  parser=ET.XMLParser(encoding=encode))
 
-    def split_namespace(self, tag: str): 
+    def split_namespace(self, tag: str):
         """Retourne le tag sans le namspace
 
         Args:
@@ -33,7 +34,7 @@ class BaseModel:
         Returns:
             str: tag
         """
-        
+
         return tag.split('}')[1]
 
     def root(self) -> ET.Element:
@@ -62,3 +63,15 @@ class BaseModel:
         """
 
         return [element.attrib for element in self.root().iter()]
+
+    def write(self, name: str) -> None:
+        """Ecriture d'un fichier, d'un nouveau si le nom est donnée ou d'une sauvegarde
+
+        Args:
+            name (str): nom du nouveau fichier
+        """
+
+        if name:
+            self.tree.write(name)
+        else:
+            self.tree.write(self.filename)
