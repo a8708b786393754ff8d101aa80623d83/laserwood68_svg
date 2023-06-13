@@ -20,8 +20,8 @@ class MainFrame(ttk.Frame):
         self.entry_title = ttk.Entry(
             self.root, textvariable=self.title_).grid(row=1, column=1)
 
-    def validate(self):
-        self.button_validate = ttk.Button(self.root, text='Validée').grid()
+    def validate(self, funct_callback):
+        self.button_validate = ttk.Button(self.root, text='Validée', command=funct_callback).grid()
 
     def preview(self):
         self.button_preview = ttk.Button(
