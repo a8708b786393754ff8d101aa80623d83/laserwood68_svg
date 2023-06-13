@@ -4,17 +4,17 @@ from xml.etree import ElementTree as ET
 class BaseModel:
     """Classe de base de tout les models."""
 
-    def __init__(self, filename: str) -> None:
-        """Methode constructrice
-
-        Args:
-            filename (str): Nom du fichier
-        """
+    def __init__(self) -> None:
+        """Methode constructrice."""
 
         # ET.register_namespace("","http://www.w3.org/2000/svg")
-        self.filename = filename
+        self.filename = None
         self.tree = None
 
+    def set_filename(self, file: str):
+        
+        self.filename = file  
+        
     def parse(self, encode: str = 'ISO-8859-5') -> None:
         """Parse le fichier, il se peut qu'il l'analyse de fichier echoue, dans ce cas on le parse avec XMLParser
 
