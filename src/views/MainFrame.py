@@ -12,7 +12,8 @@ class MainFrame(ttk.Frame):
     def number(self):
         self.label_number = ttk.Label(
             self.root, text='Numero du personnage: ').grid(row=0)
-        self.listbox = ttk.Entry(self.root, textvariable=self.numbers_).grid(row=0, column=1)
+        self.listbox = ttk.Entry(
+            self.root, textvariable=self.numbers_).grid(row=0, column=1)
 
     def title(self):
         self.label_title = ttk.Label(
@@ -21,7 +22,8 @@ class MainFrame(ttk.Frame):
             self.root, textvariable=self.title_).grid(row=1, column=1)
 
     def validate(self, funct_callback):
-        self.button_validate = ttk.Button(self.root, text='Validée', command=funct_callback).grid()
+        self.button_validate = ttk.Button(
+            self.root, text='Validée', command=funct_callback).grid()
 
     def preview(self):
         self.button_preview = ttk.Button(

@@ -12,9 +12,9 @@ class BaseModel:
         self.tree = None
 
     def set_filename(self, file: str):
-        
-        self.filename = file  
-        
+
+        self.filename = file
+
     def parse(self, encode: str = 'ISO-8859-5') -> None:
         """Parse le fichier, il se peut qu'il l'analyse de fichier echoue, dans ce cas on le parse avec XMLParser
 

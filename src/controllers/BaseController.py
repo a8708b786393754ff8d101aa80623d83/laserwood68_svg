@@ -9,6 +9,6 @@ class BaseController(ABC):
 
     @abstractclassmethod
     def cut(self): pass
-    
+
     @abstractclassmethod
     def add(self): pass
