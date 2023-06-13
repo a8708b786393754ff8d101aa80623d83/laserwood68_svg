@@ -1,7 +1,8 @@
 from abc import abstractclassmethod
+from abc import ABC
 
 
-class BaseController:
+class BaseController(ABC):
     def __init__(self, frame, model) -> None:
         self.frame = frame
         self.model = model
