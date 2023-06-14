@@ -32,3 +32,7 @@ class MainFrame(ttk.Frame):
 
     def error(self, title: str, message: str):
         messagebox.showerror(title, message)
+        
+    def validate_information(self): 
+        
+        messagebox.showinfo('Validée', 'La validation a bien été effectuée')

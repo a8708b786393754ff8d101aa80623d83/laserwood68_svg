@@ -12,10 +12,14 @@ class ElementController(BaseController):
 
     def cut(self) -> None:
         id = self.frame.numbers_.get()
-        if not self.is_number(id):
-            self.frame.error('Erruer de définition de l\'id',
-                             'Entrez le numero de l\'element')
-
         title = self.frame.title_.get()
+        if self.is_number(id):
+            if not title:  # NOTE okau y a rien dans title
+                self.frame.error('Erruer', 'Entrez un titre')
+            else:
+                self.frame.validate_information()
+        else:
+            self.frame.error('Erruer définition',
+                             'Entrez le numero de l\'element et un titre')
 
     def add(self): pass
