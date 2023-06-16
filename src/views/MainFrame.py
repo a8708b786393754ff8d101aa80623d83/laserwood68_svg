@@ -1,5 +1,7 @@
 import tkinter as ttk
 from tkinter import messagebox
+from tkinter import filedialog
+from pathlib import Path
 
 
 class MainFrame(ttk.Frame):
@@ -9,9 +11,14 @@ class MainFrame(ttk.Frame):
         self.title_ = ttk.StringVar()
 
         self.root = root
+        self.filetype = (
+            ('fichier svg', '*.svg'),
+            ('fichier xml', '*.xml'),
+            ('Tout les fichiers', '*.*')
+        )
 
     def number(self):
-        
+
         self.label_number = ttk.Label(
             self.root, text='Numero du personnage: ').grid(row=0)
         self.listbox = ttk.Entry(
@@ -25,22 +32,31 @@ class MainFrame(ttk.Frame):
             self.root, textvariable=self.title_).grid(row=1, column=1)
 
     def validate(self, funct_callback):
-        
+
         self.button_validate = ttk.Button(
             self.root, text='Validée', command=funct_callback).grid()
 
-    def add(self, funct_callback):
-        
+    def add_file(self):
+
         self.button_add = ttk.Button(
-            self.root, text='Ajoutée', command=funct_callback).grid()
+            self.root, text='Ajoutée l\'image svg', command=self.__add_file).grid()
+
+    def __add_file(self):
+        file = filedialog.askopenfile(
+            title='Ajoutée un fichier svg',
+            initialdir=str(Path.home()),
+            filetypes=self.filetype
+        )
+
+        messagebox.showinfo(title='Seléctionnée un fichier', message=file)
 
     def preview(self):
-        
+
         self.button_preview = ttk.Button(
             self.root, text="Prévisualisée").grid()
 
     def error(self, title: str, message: str):
-        
+
         messagebox.showerror(title, message)
 
     def validate_information(self):
