@@ -29,7 +29,7 @@ class MainFrame(ttk.Frame):
         self.button_validate = ttk.Button(
             self.root, text='Validée', command=funct_callback).grid()
 
-    def add(self, funct_callback: function):
+    def add(self, funct_callback):
         
         self.button_add = ttk.Button(
             self.root, text='Ajoutée', command=funct_callback).grid()
