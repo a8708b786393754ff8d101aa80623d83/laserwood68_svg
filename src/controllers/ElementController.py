@@ -11,7 +11,7 @@ class ElementController(BaseController):
 
         return re.match('^[0-9]*$', id)
 
-    def cut(self) -> None:
+    def validate(self) -> None:
         id = self.frame.numbers_.get()
         title = self.frame.title_.get()
         if self.is_number(id):
@@ -26,7 +26,10 @@ class ElementController(BaseController):
     def add(self): pass
     
     def reset(self): 
-        self.frame.entry_num_frame.delete(0, TK_END)
         self.frame.entry_font.delete(0, TK_END)
         self.frame.entry_taille.delete(0, TK_END)
         self.frame.entry_taille_police.delete(0, TK_END)
+        
+        for i in range(len(self.frame.personnages['num'])): 
+            self.frame.personnages['num'][i].delete(0, TK_END)
+            self.frame.personnages['name'][i].delete(0, TK_END)
