@@ -30,11 +30,17 @@ class MainFrame(ttk.Frame):
     def frame(self): 
         self.label_num_frame = ttk.Label(self.root, text='Numero frame').grid()
         self.entry_num_frame = ttk.Entry(
-            self.root, textvariable=self.num_frame_).grid()
+            self.root, textvariable=self.num_frame_)
+        
+        self.entry_num_frame.grid()
+        
 
     def font(self):
         self.label_font = ttk.Label(self.root, text='Font').grid()
-        self.entry_font = ttk.Entry(self.root, textvariable=self.font_).grid()
+        self.entry_font = ttk.Entry(self.root, textvariable=self.font_)
+        
+        self.entry_font.grid()
+
 
     def taille(self):
         self.label_taille = ttk.Label(self.root, text='Taille').grid()
@@ -58,8 +64,9 @@ class MainFrame(ttk.Frame):
         self.entry_taille_police.grid()
         
 
-    def reset_button(self): 
-        self.button_reset = ttk.Button(self.root, text='RESET').grid()
+    def reset_button(self, funct_callback): 
+        self.button_reset = ttk.Button(self.root, text='RESET', command=funct_callback).grid()
+        
         
     def validate(self, funct_callback):
 
