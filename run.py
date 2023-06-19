@@ -15,11 +15,16 @@ element_model = ElementModel()
 element = ElementController(main_frame, element_model)
 
 
-main_frame.number()
 main_frame.title()
+main_frame.frame()
+main_frame.font()
+main_frame.taille()
+main_frame.number_personnage()
+main_frame.taille_police()
 main_frame.add_file()
 main_frame.validate(element.cut)
 main_frame.preview()
+main_frame.reset_button()
 
 
 app.mainloop()
