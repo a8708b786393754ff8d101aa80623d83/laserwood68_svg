@@ -24,7 +24,7 @@ main_frame.taille_police()
 main_frame.add_file()
 main_frame.validate(element.cut)
 main_frame.preview()
-main_frame.reset_button()
+main_frame.reset_button(element.reset)
 
 
 app.mainloop()

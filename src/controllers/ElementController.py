@@ -1,5 +1,6 @@
 import re
 from .BaseController import BaseController
+from tkinter import END as TK_END
 
 
 class ElementController(BaseController):
@@ -23,3 +24,9 @@ class ElementController(BaseController):
                              'Entrez le numero de l\'element et un titre')
 
     def add(self): pass
+    
+    def reset(self): 
+        self.frame.entry_num_frame.delete(0, TK_END)
+        self.frame.entry_font.delete(0, TK_END)
+        self.frame.entry_taille.delete(0, TK_END)
+        self.frame.entry_taille_police.delete(0, TK_END)
