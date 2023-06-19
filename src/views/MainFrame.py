@@ -39,7 +39,9 @@ class MainFrame(ttk.Frame):
     def taille(self):
         self.label_taille = ttk.Label(self.root, text='Taille').grid()
         self.entry_taille = ttk.Entry(
-            self.root, textvariable=self.taille_).grid()
+            self.root, textvariable=self.taille_)
+        self.entry_taille.insert(0, 10)
+        self.entry_taille.grid()
 
     def number_personnage(self):
         self.label_number = ttk.Label(
@@ -50,8 +52,11 @@ class MainFrame(ttk.Frame):
     def taille_police(self):
         self.label_taille_police = ttk.Label(
             self.root, text='Taille de la police').grid()
-        self.label_taille_police = ttk.Label(
-            self.root, textvariable=self.taille_police_).grid()
+        self.entry_taille_police = ttk.Entry(
+            self.root, textvariable=self.taille_police_)
+        self.entry_taille_police.insert(0, 10)
+        self.entry_taille_police.grid()
+        
 
     def reset_button(self): 
         self.button_reset = ttk.Button(self.root, text='RESET').grid()
