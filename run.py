@@ -10,10 +10,14 @@ from src.models.ElementModel import ElementModel
 from src.models.LayerModel import LayerModel
 
 app = AppView()
+
 main_frame = MainFrame(app)
 
-element = ElementController(main_frame, ElementModel())
-layer = LayerController(main_frame, LayerModel())
+element_model = ElementModel()
+element = ElementController(main_frame, element_model)
+
+layer_model = LayerModel()
+layer = LayerController(main_frame, layer_model)
 
 
 main_frame.title()
@@ -23,8 +27,9 @@ main_frame.taille()
 main_frame.number_personnage()
 main_frame.taille_police()
 main_frame.add_file()
+
 if main_frame.validate(element.validate): 
-    succes()
+    layer.set_title(main_frame.title_)
 else: 
     error()
 main_frame.preview()
