@@ -125,11 +125,3 @@ class MainFrame(ttk.Frame):
 
         self.button_preview = ttk.Button(
             self.root, text="Prévisualisée", width=20).grid(row=14, column=1)
-
-    def error(self, title: str, message: str):
-
-        messagebox.showerror(title, message)
-
-    def validate_information(self):
-
-        messagebox.showinfo('Validée', 'La validation a bien été effectuée')
