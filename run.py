@@ -1,7 +1,6 @@
 #! /usr/bin/python3
 from src.views.AppView import AppView
 from src.views.MainFrame import MainFrame
-from src.views import succes, error
 
 from src.controllers.ElementController import ElementController
 from src.controllers.LayerController import LayerController
@@ -28,10 +27,7 @@ main_frame.number_personnage()
 main_frame.taille_police()
 main_frame.add_file()
 
-if main_frame.validate(element.validate): 
-    layer.set_title(main_frame.title_)
-else: 
-    error()
+main_frame.validate(element.validate)
 main_frame.preview()
 main_frame.reset_button(element.reset)
 

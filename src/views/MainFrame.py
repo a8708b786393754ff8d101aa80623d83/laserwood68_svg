@@ -28,7 +28,9 @@ class MainFrame(ttk.Frame):
         label_title = ttk.Label(
             self.root, text='Titre', width=20).grid(row=1)
         self.entry_title = ttk.Entry(
-            self.root, textvariable=self.title_).grid(row=1, column=1)
+            self.root, textvariable=self.title_)
+        
+        self.entry_title.grid(row=1, column=1)
 
     def frame(self):
         label_num_frame = ttk.Label(self.root, text='Numero frame', width=20).grid(row=2)
